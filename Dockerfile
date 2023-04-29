@@ -1,4 +1,4 @@
 FROM openjdk
 EXPOSE 3880
-ADD target/backend-0.0.1-SNAPSHOT.jar spring-boot-docker.jar
+COPY --from=build /target/backend-0.0.1-snapshot.jar backend-0.0.1-snapshot.jar
 ENTRYPOINT ["java", "-jar", "/spring-boot-docker.jar"]
